@@ -1,4 +1,6 @@
 from main import *
+from FordMarkov import *
+from GMMarkov import *
 import matplotlib.pyplot as plt
 from scipy import stats
 
@@ -6,7 +8,7 @@ x = []
 for idx, num in enumerate(Ford):
   x.append(idx + 1)
 
-days = 30
+days = len(Ford)
 
 ##Initially we will use just closing prices
 Ford_Close = []
@@ -43,6 +45,25 @@ plt.savefig("percentChange.png")
 ##Short the stock that is over 
 ##Long the stock that is under
 
+
+'''
+Need a way to calculate correlation so that simulation only
+runs in ideal situations
+'''
+
+##Gives percent differene of slopes
+difference = abs(GM_slope - Ford_slope) / GM_slope
+
+diff = []
+for i in range(0, len(Ford_PercentChange)):
+  diff.append(abs(Ford_PercentChange[i]-GM_PercentChange[i]))
+
+diff_avg = sum(diff) / len(diff)
+
+print(diff_avg)
+
+
+
 '''
 Buy a stock when under and sell when over
 Initially start with 100 shares 
@@ -57,31 +78,54 @@ GM_Money = GM_Shares * GM_Close[0]
 Ford_Initial = Ford_Money
 GM_Initial = GM_Money
 
-print(Ford_Money, GM_Money)
+print(f"Ford: ${Ford_Money}, GM: ${GM_Money}")
+
+"""
+How many stocks we buy/sell will be 
+determined by the Markov Chain propabilities
+"""
+
+Ford_Comeback = []
+GM_Comeback = []
+
+for i in range(0, len(Ford)-1):
+  change = []
+  if Ford_PercentChange[i] < GM_PercentChange[i]:
+    change.append(abs(Ford_PercentChange[i]-GM_PercentChange[i]))
+    change.append(abs(Ford_PercentChange[i+1]-GM_PercentChange[i+1]))
+    Ford_Comeback.append(change)
+  elif Ford_PercentChange[i] > GM_PercentChange[i]:
+    change.append(abs(Ford_PercentChange[i]-GM_PercentChange[i]))
+    change.append(abs(Ford_PercentChange[i+1]-GM_PercentChange[i+1]))
+    GM_Comeback.append(change)
+
+print(Ford_Comeback, GM_Comeback)
+
 
 GM_Moves = []
 Ford_Moves = []
 
 for i in range(0, len(Ford)):
-  if Ford_PercentChange[i] > GM_PercentChange[i] and Ford_PercentChange[i] < 0:
+  differ = abs(Ford_PercentChange[i] - GM_PercentChange[i])
+  if Ford_PercentChange[i] > GM_PercentChange[i] and Ford_PercentChange[i] < 0 and differ > diff_avg:
     GM_Action = "Buy"
     GM_Shares += 10
     GM_Money -= GM_Close[i] * 10
     GM_Moves.append(GM_Action)
     
-  elif Ford_PercentChange[i] < GM_PercentChange[i] and GM_PercentChange[i] < 0:
+  elif Ford_PercentChange[i] < GM_PercentChange[i] and GM_PercentChange[i] < 0 and differ > diff_avg:
     Ford_Action = "Buy"
     Ford_Shares += 10
     Ford_Money -= Ford_Close[i] * 10
     Ford_Moves.append(Ford_Action)
 
-  elif Ford_PercentChange[i] > GM_PercentChange[i] and GM_PercentChange[i] > 0:
+  elif Ford_PercentChange[i] > GM_PercentChange[i] and GM_PercentChange[i] > 0 and differ > diff_avg:
     Ford_Action = "Sell"
     Ford_Shares -= 10
     Ford_Money += Ford_Close[i] * 10
     Ford_Moves.append(Ford_Action)
 
-  elif Ford_PercentChange[i] < GM_PercentChange[i] and Ford_PercentChange[i] > 0:
+  elif Ford_PercentChange[i] < GM_PercentChange[i] and Ford_PercentChange[i] > 0 and differ > diff_avg:
     GM_Action = "Sell"
     GM_Shares -= 10
     GM_Money += GM_Close[i] * 10
@@ -92,6 +136,13 @@ Ford_Money += Ford_Shares * Ford_Close[-1]
 GM_Money += GM_Shares * GM_Close[-1]
 Ford_Returns = ((Ford_Money-Ford_Initial)/Ford_Initial) * 100
 GM_Returns = ((GM_Money-GM_Initial)/GM_Initial) * 100
-print(Ford_Returns, GM_Returns)
+print(F"{Ford_Returns}%, Ford: ${Ford_Money}, {GM_Returns}%, GM: ${GM_Money}")
+
+
+
+
+
+
+
 
 
