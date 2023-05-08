@@ -30,7 +30,6 @@ GM_model = list(map(GM_linear, x[-days:]))
 
 plt.scatter(x[-days:], Ford_PercentChange[-days:])
 plt.scatter(x[-days:], GM_PercentChange[-days:])
-plt.plot(x[-days:], Ford_model)
-plt.plot(x[-days:], GM_model)
-
+plt.plot(x[-days:], Ford_PercentChange[-days:])
+plt.plot(x[-days:], GM_PercentChange[-days:])
 plt.savefig("percentChange.png")
