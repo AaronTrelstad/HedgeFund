@@ -54,6 +54,9 @@ GM_Shares = 100
 Ford_Money = Ford_Shares * Ford_Close[0]
 GM_Money = GM_Shares * GM_Close[0]
 
+Ford_Initial = Ford_Money
+GM_Initial = GM_Money
+
 print(Ford_Money, GM_Money)
 
 GM_Moves = []
@@ -85,6 +88,10 @@ for i in range(0, len(Ford)):
     GM_Moves.append(GM_Action)
 
 print(GM_Moves, Ford_Moves)
-print(Ford_Money, Ford_Shares, GM_Money, GM_Shares)
+Ford_Money += Ford_Shares * Ford_Close[-1]
+GM_Money += GM_Shares * GM_Close[-1]
+Ford_Returns = ((Ford_Money-Ford_Initial)/Ford_Initial) * 100
+GM_Returns = ((GM_Money-GM_Initial)/GM_Initial) * 100
+print(Ford_Returns, GM_Returns)
 
 
