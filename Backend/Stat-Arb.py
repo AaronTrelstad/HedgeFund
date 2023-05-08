@@ -8,6 +8,13 @@ for idx, num in enumerate(Ford):
 
 days = 30
 
+##Initially we will use just closing prices
+Ford_Close = []
+GM_Close = []
+for i in range(0, len(Ford)):
+  Ford_Close.append(float(Ford[i][2]))
+  GM_Close.append(float(GM[i][2]))
+
 Ford_PercentChange = []
 GM_PercentChange = []
 for i in range(0, len(Ford)):
@@ -27,9 +34,57 @@ def GM_linear(x):
 Ford_model = list(map(Ford_linear, x[-days:]))
 GM_model = list(map(GM_linear, x[-days:]))
 
-
 plt.scatter(x[-days:], Ford_PercentChange[-days:])
 plt.scatter(x[-days:], GM_PercentChange[-days:])
 plt.plot(x[-days:], Ford_PercentChange[-days:])
 plt.plot(x[-days:], GM_PercentChange[-days:])
 plt.savefig("percentChange.png")
+
+##Short the stock that is over 
+##Long the stock that is under
+
+'''
+Buy a stock when under and sell when over
+Initially start with 100 shares 
+Buy and Sell use 10 shares
+'''
+Ford_Shares = 100
+GM_Shares = 100
+
+Ford_Money = Ford_Shares * Ford_Close[0]
+GM_Money = GM_Shares * GM_Close[0]
+
+print(Ford_Money, GM_Money)
+
+GM_Moves = []
+Ford_Moves = []
+
+for i in range(0, len(Ford)):
+  if Ford_PercentChange[i] > GM_PercentChange[i] and Ford_PercentChange[i] < 0:
+    GM_Action = "Buy"
+    GM_Shares += 10
+    GM_Money -= GM_Close[i] * 10
+    GM_Moves.append(GM_Action)
+    
+  elif Ford_PercentChange[i] < GM_PercentChange[i] and GM_PercentChange[i] < 0:
+    Ford_Action = "Buy"
+    Ford_Shares += 10
+    Ford_Money -= Ford_Close[i] * 10
+    Ford_Moves.append(Ford_Action)
+
+  elif Ford_PercentChange[i] > GM_PercentChange[i] and GM_PercentChange[i] > 0:
+    Ford_Action = "Sell"
+    Ford_Shares -= 10
+    Ford_Money += Ford_Close[i] * 10
+    Ford_Moves.append(Ford_Action)
+
+  elif Ford_PercentChange[i] < GM_PercentChange[i] and Ford_PercentChange[i] > 0:
+    GM_Action = "Sell"
+    GM_Shares -= 10
+    GM_Money += GM_Close[i] * 10
+    GM_Moves.append(GM_Action)
+
+print(GM_Moves, Ford_Moves)
+print(Ford_Money, Ford_Shares, GM_Money, GM_Shares)
+
+

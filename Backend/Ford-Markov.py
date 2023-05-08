@@ -33,6 +33,8 @@ Increase['Decrease'] = Increase['Decrease'] / Increase_Total
 Decrease['Increase'] = Decrease['Increase'] / Decrease_Total
 Decrease["Decrease"] = Decrease['Decrease'] / Decrease_Total
 
+
+
 print(Increase)
 print(Decrease)
 
