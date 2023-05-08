@@ -4,13 +4,18 @@ import './main.css';
 const Main = () => {
     return (
         <>
-        <text>
-            Spartan Technologies
-        </text>
         <h1>
-            Spartan plan on releasing its first fund "Warrior Fund" by end of 2023. This fund will use Statistical Arbitrage on a specific
-            sector to find holes in the market.
+            Spartan Technologies
         </h1>
+        <div className='box1'>
+            <h2>
+                Spartan Technology plans on releasing its inaugural fund, "Cyclone Fund", by the end of 2023. 
+                This fund focuses on using Statisitcal Arbitrage on company pairs.
+            </h2>
+        </div>
+        <div className='box1'>
+            About Us
+        </div>
         </>
     )
 }
