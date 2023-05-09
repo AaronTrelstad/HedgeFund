@@ -32,6 +32,3 @@ GM_Increase['Increase'] = GM_Increase['Increase'] / Increase_Total
 GM_Increase['Decrease'] = GM_Increase['Decrease'] / Increase_Total
 GM_Decrease['Increase'] = GM_Decrease['Increase'] / Decrease_Total
 GM_Decrease["Decrease"] = GM_Decrease['Decrease'] / Decrease_Total
-
-print(GM_Increase)
-print(GM_Decrease)

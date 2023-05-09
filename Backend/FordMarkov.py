@@ -33,8 +33,3 @@ Ford_Increase['Decrease'] = Ford_Increase['Decrease'] / Increase_Total
 Ford_Decrease['Increase'] = Ford_Decrease['Increase'] / Decrease_Total
 Ford_Decrease["Decrease"] = Ford_Decrease['Decrease'] / Decrease_Total
 
-
-
-print(Ford_Increase)
-print(Ford_Decrease)
-
