@@ -181,31 +181,31 @@ initial = money
 GM_Moves = []
 Ford_Moves = []
 
-shares = 20
+investment = 100
 
 for i in range(0, len(Ford)):
   differ = abs(Ford_PercentChange[i] - GM_PercentChange[i])
   ##Anytime Ford is lower it is better to buy
   if Ford_PercentChange[i] > GM_PercentChange[i] and differ > diff_avg:
-    if Ford_Shares >= shares:
-      Ford_Shares -= shares
-      money += Ford_Close[i] * shares
+    if Ford_Shares >= investment/Ford_Close[i]:
+      Ford_Shares -= investment/Ford_Close[i]
+      money += investment
       Ford_Action = "Sell"
       Ford_Moves.append(Ford_Action)
-    if money > GM_Close[i] * shares:
-      money -= GM_Close[i] * shares
-      GM_Shares += shares
+    if money >= investment:
+      money -= investment
+      GM_Shares += investment/GM_Close[i]
       GM_Action = "Buy"
       GM_Moves.append(GM_Action)
   elif Ford_PercentChange[i] < GM_PercentChange[i] and differ > diff_avg:
-    if GM_Shares >= shares:
-      GM_Shares -= shares
-      money += GM_Close[i] * shares
+    if GM_Shares >= investment/GM_Close[i]:
+      GM_Shares -= investment/GM_Close[i]
+      money += investment
       GM_Action = "Sell"
       GM_Moves.append(GM_Action)
-    if money > Ford_Close[i] * shares:
-      money -= Ford_Close[i] * shares
-      Ford_Shares += shares
+    if money >= investment:
+      money -= investment
+      Ford_Shares += investment/Ford_Close[i]
       Ford_Action = "Buy"
       Ford_Moves.append(Ford_Action)
 
