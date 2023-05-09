@@ -154,7 +154,7 @@ GM_Negative[1] /= len(GM_PartCome["Negative"])
 
 
 
-print(Ford_PartCome, GM_PartCome)
+##print(Ford_PartCome, GM_PartCome)
 print(f"Ford: {Ford_Positive, Ford_Negative}")
 print(f"GM: {GM_Positive, GM_Negative}")
 print(F"Comebacks: {Ford_ComeAvg, GM_ComeAvg}")
@@ -181,33 +181,34 @@ initial = money
 GM_Moves = []
 Ford_Moves = []
 
-investment = 100
+investment_small = 100
+investment_big = 120
 
 for i in range(0, len(Ford)):
   differ = abs(Ford_PercentChange[i] - GM_PercentChange[i])
   ##Anytime Ford is lower it is better to buy
   if Ford_PercentChange[i] > GM_PercentChange[i] and differ > diff_avg:
-    if Ford_Shares >= investment/Ford_Close[i]:
-      Ford_Shares -= investment/Ford_Close[i]
-      money += investment
+    if Ford_Shares >= investment_small/Ford_Close[i]:
+      Ford_Shares -= investment_small/Ford_Close[i]
+      money += investment_small
       Ford_Action = "Sell"
-      Ford_Moves.append(Ford_Action)
-    if money >= investment:
-      money -= investment
-      GM_Shares += investment/GM_Close[i]
+      Ford_Moves.append([i, Ford_Action])
+    if money >= investment_small:
+      money -= investment_small
+      GM_Shares += investment_small/GM_Close[i]
       GM_Action = "Buy"
-      GM_Moves.append(GM_Action)
-  elif Ford_PercentChange[i] < GM_PercentChange[i] and differ > diff_avg:
-    if GM_Shares >= investment/GM_Close[i]:
-      GM_Shares -= investment/GM_Close[i]
-      money += investment
+      GM_Moves.append([i, GM_Action])
+  elif Ford_PercentChange[i] < GM_PercentChange[i]:
+    if GM_Shares >= investment_big/GM_Close[i]:
+      GM_Shares -= investment_big/GM_Close[i]
+      money += investment_big
       GM_Action = "Sell"
-      GM_Moves.append(GM_Action)
-    if money >= investment:
-      money -= investment
-      Ford_Shares += investment/Ford_Close[i]
+      GM_Moves.append([i, GM_Action])
+    if money >= investment_big:
+      money -= investment_big
+      Ford_Shares += investment_big/Ford_Close[i]
       Ford_Action = "Buy"
-      Ford_Moves.append(Ford_Action)
+      Ford_Moves.append([i, Ford_Action])
 
 print(f"GM: {GM_Moves}, Ford: {Ford_Moves}")
 print(money, Ford_Shares, GM_Shares)
