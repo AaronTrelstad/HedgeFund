@@ -91,15 +91,65 @@ GM_Comeback = []
 for i in range(0, len(Ford)-1):
   change = []
   if Ford_PercentChange[i] < GM_PercentChange[i]:
-    change.append(abs(Ford_PercentChange[i]-GM_PercentChange[i]))
-    change.append(abs(Ford_PercentChange[i+1]-GM_PercentChange[i+1]))
+    change.append(Ford_PercentChange[i]-GM_PercentChange[i])
+    change.append(Ford_PercentChange[i+1]-GM_PercentChange[i+1])
     Ford_Comeback.append(change)
   elif Ford_PercentChange[i] > GM_PercentChange[i]:
-    change.append(abs(Ford_PercentChange[i]-GM_PercentChange[i]))
-    change.append(abs(Ford_PercentChange[i+1]-GM_PercentChange[i+1]))
+    change.append(GM_PercentChange[i]-Ford_PercentChange[i])
+    change.append(GM_PercentChange[i+1]-Ford_PercentChange[i+1])
     GM_Comeback.append(change)
 
-print(Ford_Comeback, GM_Comeback)
+Ford_ComeAvg = [0] * 2
+GM_ComeAvg = [0] * 2
+
+for i in range(0, len(Ford_Comeback)):
+  Ford_ComeAvg[0] += Ford_Comeback[i][0]
+  Ford_ComeAvg[1] += Ford_Comeback[i][1]
+  GM_ComeAvg[0] += GM_Comeback[i][0]
+  GM_ComeAvg[1] += GM_Comeback[i][1]
+
+Ford_ComeAvg[0] /= len(Ford_Comeback)
+Ford_ComeAvg[1] /= len(Ford_Comeback)
+GM_ComeAvg[0] /= len(GM_Comeback)
+GM_ComeAvg[1] /= len(GM_Comeback)
+
+print(F"Comebacks: {Ford_ComeAvg, GM_ComeAvg}")
+
+Ford_Drawback = []
+GM_Drawback = []
+
+for i in range(0, len(Ford)-1):
+  change = []
+  if Ford_PercentChange[i] > GM_PercentChange[i]:
+    change.append(Ford_PercentChange[i]-GM_PercentChange[i])
+    change.append(Ford_PercentChange[i+1]-GM_PercentChange[i+1])
+    Ford_Drawback.append(change)
+  elif Ford_PercentChange[i] < GM_PercentChange[i]:
+    change.append(GM_PercentChange[i]-Ford_PercentChange[i])
+    change.append(GM_PercentChange[i+1]-Ford_PercentChange[i+1])
+    GM_Drawback.append(change)
+
+Ford_DrawAvg = [0] * 2
+GM_DrawAvg = [0] * 2
+
+for i in range(0, len(Ford_Drawback)):
+  Ford_DrawAvg[0] += Ford_Drawback[i][0]
+  Ford_DrawAvg[1] += Ford_Drawback[i][1]
+  GM_DrawAvg[0] += GM_Drawback[i][0]
+  GM_DrawAvg[1] += GM_Drawback[i][1]
+
+Ford_DrawAvg[0] /= len(Ford_Drawback)
+Ford_DrawAvg[1] /= len(Ford_Drawback)
+GM_DrawAvg[0] /= len(GM_Drawback)
+GM_DrawAvg[1] /= len(GM_Drawback)
+
+print(f"Drawback: {Ford_DrawAvg, GM_DrawAvg}")
+
+'''
+This shows that if Ford is less than there is 
+a better chance of it going positive opposed to GM
+'''
+
 
 
 GM_Moves = []
