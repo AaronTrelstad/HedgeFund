@@ -87,11 +87,14 @@ GM_ComeAvg = [0] * 2
 for i in range(0, len(Ford_Comeback)):
   Ford_ComeAvg[0] += Ford_Comeback[i][0]
   Ford_ComeAvg[1] += Ford_Comeback[i][1]
-  GM_ComeAvg[0] += GM_Comeback[i][0]
-  GM_ComeAvg[1] += GM_Comeback[i][1]
-
+  
 Ford_ComeAvg[0] /= len(Ford_Comeback)
 Ford_ComeAvg[1] /= len(Ford_Comeback)
+
+for i in range(0, len(GM_Comeback)):
+  GM_ComeAvg[0] += GM_Comeback[i][0]
+  GM_ComeAvg[1] += GM_Comeback[i][1]
+               
 GM_ComeAvg[0] /= len(GM_Comeback)
 GM_ComeAvg[1] /= len(GM_Comeback)
 

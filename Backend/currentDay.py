@@ -22,10 +22,10 @@ CurrFord[0][2] = float(CurrFord[0][2])
 CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
-Ford_Shares = 0
-GM_Shares = 0
+Ford_Shares = 1.7076149081244747
+GM_Shares = 3.0229746070133015
 
-money = 1000
+money = 880
 initial = money
 
 GM_Moves = []
@@ -59,6 +59,7 @@ elif CurrFord[0][2] < CurrGM[0][2]:
         Ford_Shares += investment_big/CurrFord[0][1]
         Ford_Action = "Buy"
         Ford_Moves.append(Ford_Action)
-
-print(Ford_Moves, GM_Moves)
+ 
+print(f"Ford: {Ford_Moves}, GM: {GM_Moves}")
+print(f"Ford Shares: {Ford_Shares}, GM Shares: {GM_Shares}")
 print(f"Money: ${money, initial}")

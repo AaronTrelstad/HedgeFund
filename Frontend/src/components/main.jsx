@@ -4,7 +4,7 @@ import './main.css';
 const Main = () => {
     return (
         <>
-        <h1 className='box1'>
+        <h1>
             Spartan Technologies
         </h1>
         <div className='box1'>

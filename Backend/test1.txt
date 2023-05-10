@@ -1,1 +1,5 @@
-Day 1: Buy $120 Ford @ 11.86
+Start with $1000
+
+Day 1: Buy $120 Ford @ 11.86 
+Day 2: Sell $100 Ford @ 11.89    Buy $100 GM @ 33.08
+    
