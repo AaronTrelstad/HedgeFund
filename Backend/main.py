@@ -9,11 +9,11 @@ files = os.listdir(cwd)
 
 print(files)
 
-with open('GM.csv') as f:
+with open('NewGM.csv') as f:
     reader = csv.reader(f)
     GM = list(reader)
 
-with open('Ford.csv') as f:
+with open('NewFord.csv') as f:
     reader = csv.reader(f)
     Ford = list(reader)
 

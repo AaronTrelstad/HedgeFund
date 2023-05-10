@@ -22,22 +22,25 @@ CurrFord[0][2] = float(CurrFord[0][2])
 CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
-Ford_Shares = 1.7076149081244747
-GM_Shares = 3.0229746070133015
+Ford_Shares = 0.042548544343382844
+GM_Shares = 6.045949214026603
 
-money = 880
+##Ford_Shares = 1.7076149081244747
+##GM_Shares = 3.0229746070133015
+
+money = 800
 initial = money
 
 GM_Moves = []
 Ford_Moves = []
 
-investment_small = 100
-investment_big = 120
+investment_small = 200
+investment_big = 200
 
 
 differ = abs(CurrFord[0][2] - CurrGM[0][2])
   ##Anytime Ford is lower it is better to buy
-if CurrFord[0][2] > CurrGM[0][2] and differ > diff_avg:
+if CurrFord[0][2] > CurrGM[0][2]:
     if Ford_Shares >= investment_small/CurrFord[0][1]:
         Ford_Shares -= investment_small/CurrFord[0][1]
         money += investment_small

@@ -126,28 +126,28 @@ for i in range(0, len(Ford)-1):
     change.append(GM_PercentChange[i+1]-Ford_PercentChange[i+1])
     GM_PartCome["Negative"].append(change)
 
-Ford_Positive = [0] * 3
+Ford_Positive = [0] * 2
 for i in range(0, len(Ford_PartCome["Positive"])):
   Ford_Positive[0] += Ford_PartCome["Positive"][i][0]
   Ford_Positive[1] += Ford_PartCome["Positive"][i][1]
 Ford_Positive[0] /= len(Ford_PartCome["Positive"])
 Ford_Positive[1] /= len(Ford_PartCome["Positive"])
 
-Ford_Negative = [0] * 3
+Ford_Negative = [0] * 2
 for i in range(0, len(Ford_PartCome["Negative"])):
   Ford_Negative[0] += Ford_PartCome["Negative"][i][0]
   Ford_Negative[1] += Ford_PartCome["Negative"][i][1]
 Ford_Negative[0] /= len(Ford_PartCome["Negative"])
 Ford_Negative[1] /= len(Ford_PartCome["Negative"])
 
-GM_Positive = [0] * 3
+GM_Positive = [0] * 2
 for i in range(0, len(GM_PartCome["Positive"])):
   GM_Positive[0] += GM_PartCome["Positive"][i][0]
   GM_Positive[1] += GM_PartCome["Positive"][i][1]
 GM_Positive[0] /= len(GM_PartCome["Positive"])
 GM_Positive[1] /= len(GM_PartCome["Positive"])
 
-GM_Negative = [0] * 3
+GM_Negative = [0] * 2
 for i in range(0, len(GM_PartCome["Negative"])):
   GM_Negative[0] += GM_PartCome["Negative"][i][0]
   GM_Negative[1] += GM_PartCome["Negative"][i][1]
@@ -184,13 +184,13 @@ initial = money
 GM_Moves = []
 Ford_Moves = []
 
-investment_small = 100
-investment_big = 120
+investment_small = 200
+investment_big = 200
 
 for i in range(0, len(Ford)):
   differ = abs(Ford_PercentChange[i] - GM_PercentChange[i])
   ##Anytime Ford is lower it is better to buy
-  if Ford_PercentChange[i] > GM_PercentChange[i] and differ > diff_avg:
+  if Ford_PercentChange[i] > GM_PercentChange[i]:
     if Ford_Shares >= investment_small/Ford_Close[i]:
       Ford_Shares -= investment_small/Ford_Close[i]
       money += investment_small
