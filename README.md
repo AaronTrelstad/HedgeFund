@@ -1,1 +1,1 @@
-Spartan Technologies is a future disruptor in the Hedge Fund industry by using cutting-edge mathematical models to maximize returns. Spartan was created by Aaron Trelstad in May of 2023 during his senior year of high school.
+Spartan05
