@@ -9,7 +9,6 @@ with open('currentGM.csv') as f:
   reader = csv.reader(f)
   CurrGM = list(reader)
 
-
 CurrFord_key = CurrFord[0]
 CurrGM_key = CurrGM[0]
 CurrFord = CurrFord[1:]
@@ -25,8 +24,10 @@ CurrGM[0][2] = float(CurrGM[0][2])
 Ford_Shares = 0.042548544343382844
 GM_Shares = 6.045949214026603
 
-##Ford_Shares = 1.7076149081244747
-##GM_Shares = 3.0229746070133015
+"""
+$200 is a full confidence buy/sell, I need to create a way to 
+price the other buy/sells
+"""
 
 money = 800
 initial = money
