@@ -6,12 +6,14 @@ const Main = () => {
     return (
         <>
             <h1>
-                Website
+                Spartan05
             </h1>
             <Nav/>
             <div className='box2'>
                 <h2>
-                    Hello
+                    For our "Cyclone Fund" we use Statistical Arbitrage on stock pairs to maximize gains off of daily price changes.
+                    This fund will be released by the end of 2023, this model returned 87.19% when backtested over the past year
+                    and we are currently testing. We also plan on releasing derivatives in the future.
                 </h2>
             </div>
         </>

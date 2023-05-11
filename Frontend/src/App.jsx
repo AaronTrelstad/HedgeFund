@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Main from './components/main.jsx';
-import AboutMe from './components/aboutme.jsx';
+import AboutUs from './components/aboutus.jsx';
 import {
   Routes,
   Route
@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route index element={<Main />} />
         <Route path="/Home" element={<Main />} />
-        <Route path="/AboutMe" element={<AboutMe />} />
+        <Route path="/Aboutus" element={<AboutUs />} />
       </Routes>
     </>
   );
