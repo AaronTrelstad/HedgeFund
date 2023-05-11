@@ -1,6 +1,7 @@
 import React from 'react';
 import './methods.css'
 import Nav from './nav.jsx'
+import Footer from './footer.jsx'
 
 const Methods = () => {
     return (
@@ -15,6 +16,7 @@ const Methods = () => {
                     2. Fowards (Long and Short Positions)
                 </h2>
             </div>
+            <Footer/>
         </>
     )
 }

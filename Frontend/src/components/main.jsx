@@ -1,6 +1,7 @@
 import React from 'react';
 import './main.css';
 import Nav from './nav.jsx';
+import Footer from './footer.jsx'
 
 const Main = () => {
     return (
@@ -16,6 +17,7 @@ const Main = () => {
                     and we are currently testing. We also plan on releasing derivatives in the future.
                 </h2>
             </div>
+            <Footer/>
         </>
     )
 }
