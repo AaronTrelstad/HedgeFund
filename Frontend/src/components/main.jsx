@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <>
             <h1>
-                Spartan05
+                Blue River Capital
             </h1>
             <Nav/>
             <div className='box2'>

@@ -8,8 +8,12 @@ const Nav = () => {
                 <a href='/home'>Home</a>
             </button>
             <button className='button'>
-                <a href="/aboutus">About Us</a>
+                <a href='/aboutus'>About Us</a>
             </button>
+            <button className='button'>
+                <a href='/methods'>Methods</a>
+            </button>
+            
         </>
     )
 }
