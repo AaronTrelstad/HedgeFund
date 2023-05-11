@@ -28,8 +28,10 @@ h2 {
 .box2 {
   border: 5px solid;
   position: absolute;
-  top: 40rem;
+  top: 60%;
   gap: 1rem;
   padding: 2rem;
   width: 80rem;
+  left:5%
+
 }

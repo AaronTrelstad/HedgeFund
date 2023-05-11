@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from './nav.jsx'
 import './aboutus.css'
-import Footer from './footer.jsx'
 
 const AboutUS = () => {
     return (
@@ -15,7 +14,6 @@ const AboutUS = () => {
                     Aaron Trelstad - CEO/Founder
                 </h2>
             </div>
-            <Footer/>
         </>
     )
 }

@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Main from './components/main.jsx';
 import AboutUs from './components/aboutus.jsx';
-import Methods from './components/methods.jsx'
+import Methods from './components/methods.jsx';
 import {
   Routes,
   Route

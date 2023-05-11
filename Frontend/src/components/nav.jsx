@@ -13,7 +13,6 @@ const Nav = () => {
             <button className='button'>
                 <a href='/methods'>Methods</a>
             </button>
-            
         </>
     )
 }
