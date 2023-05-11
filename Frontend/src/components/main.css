@@ -4,24 +4,32 @@ h1 {
   text-align: center;
   margin: auto;
   padding: 5rem;
+  text-shadow: 0 0 10px #8a8a8a, 0 0 20px #8a8a8a, 0 0 40px #8a8a8a;
 }
  
 h2 {
   font-size: 1rem;
-  color: navy
+  color: rgb(42, 42, 153)
 }
 
 .box1 {
-  background-color: rgb(91, 91, 91);
+  background-color: rgb(182, 182, 182);
   display: grid;
   grid-template-columns: 2;
   gap: 1rem;
   padding:5rem;
   width: 95%;
-  border-radius: 1rem;
-  width:50%;
+  border: 0.1rem solid;
+  position: absolute;
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
-.box1:hover {
-  background-color: rgb(68, 68, 68)
+.box2 {
+  border: 5px solid;
+  position: absolute;
+  top: 40rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
 }
