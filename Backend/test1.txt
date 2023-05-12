@@ -4,3 +4,4 @@ Only really uses at max $400
 Day 1: Buy $200 Ford @ 11.86 
 Day 2: Sell $200 Ford @ 11.89    Buy $200 GM @ 33.08
 Day 3: Buy $200 Ford @ 11.87     Sell $200 GM @ 33.12
+Day 4:                           Buy $200 GM @ 32.40

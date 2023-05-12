@@ -22,14 +22,14 @@ CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
 Ford_Shares = 16.89174820735939
-GM_Shares = 0.007301871031433649
+GM_Shares = 6.180141377204273
 
 """
 $200 is a full confidence buy/sell, I need to create a way to 
 price the other buy/sells
 """
 
-money = 800
+money = 600
 initial = money
 
 GM_Moves = []
