@@ -11,9 +11,8 @@ const Main = () => {
             <Nav/>
             <div className='box2'>
                 <h2>
-                    For our "Cyclone Fund" we use Statistical Arbitrage on stock pairs to maximize gains off of daily price changes.
-                    This fund will be released by the end of 2023, this model returned 87.19% when backtested over the past year
-                    and we are currently testing. We also plan on releasing derivatives in the future.
+                    We are a up and coming quantivative research hedge fund that priortizes mathematical and statistical models to
+                    discover the secrets of the stock market.
                 </h2>
             </div>
         </>

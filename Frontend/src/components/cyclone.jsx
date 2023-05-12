@@ -7,6 +7,9 @@ const Cyclone = () => {
         <>
             <h1>Cyclone Fund</h1>
             <Nav/>
+            <h2 className='box2'>
+                We analyze stock pairs to find inefficencies within the market
+            </h2>
         </>
     )
 }

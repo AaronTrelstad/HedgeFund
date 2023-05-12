@@ -13,7 +13,7 @@ h2 {
 }
 
 .box1 {
-  background-color: rgb(182, 182, 182);
+  background-color: rgb(198, 201, 255);
   display: grid;
   grid-template-columns: 1;
   gap: 1rem;
@@ -26,6 +26,7 @@ h2 {
 }
 
 .box2 {
+  background-color: rgb(212, 219, 255);
   border: 5px solid;
   position: absolute;
   top: 60%;
