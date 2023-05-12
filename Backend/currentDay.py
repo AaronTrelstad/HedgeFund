@@ -21,8 +21,8 @@ CurrFord[0][2] = float(CurrFord[0][2])
 CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
-Ford_Shares = 0.042548544343382844
-GM_Shares = 6.045949214026603
+Ford_Shares = 16.89174820735939
+GM_Shares = 0.007301871031433649
 
 """
 $200 is a full confidence buy/sell, I need to create a way to 

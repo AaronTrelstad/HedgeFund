@@ -7,6 +7,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Cyclone from './components/cyclone';
+import Derivative from './components/derivative';
+import Contact from './components/contact';
 
 const App = () => {
   return (
@@ -16,6 +19,9 @@ const App = () => {
         <Route path="/Home" element={<Main />} />
         <Route path="/Aboutus" element={<AboutUs />} />
         <Route path="/Methods" element={<Methods />} />
+        <Route path="/cyclone" element={<Cyclone />} />
+        <Route path="/derivative" element={<Derivative />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );

@@ -13,6 +13,15 @@ const Nav = () => {
             <button className='button'>
                 <a href='/methods'>Methods</a>
             </button>
+            <button className='button'>
+                <a href='/cyclone'>Cyclone Fund</a>
+            </button>
+            <button className='button'>
+                <a href='./derivative'>Derivatives</a>
+            </button>
+            <button className='button'>
+                <a href="./contact">Contact Us</a>
+            </button>
         </>
     )
 }
