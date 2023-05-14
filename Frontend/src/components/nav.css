@@ -17,10 +17,3 @@ button {
     transition-duration: 0.5s;
 }
 
-a {
-    color:rgb(64, 86, 255);
-    text-decoration: None;
-    font-size: 1.25rem;
-    width: 10rem;
-    line-height: 3rem;
-}

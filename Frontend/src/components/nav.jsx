@@ -4,24 +4,36 @@ import './nav.css';
 const Nav = () => {
     return (
         <>
-            <button className='button'>
-                <a href='/home'>Home</a>
-            </button>
-            <button className='button'>
-                <a href='/aboutus'>About Us</a>
-            </button>
-            <button className='button'>
-                <a href='/methods'>Methods</a>
-            </button>
-            <button className='button'>
-                <a href='/cyclone'>Cyclone Fund</a>
-            </button>
-            <button className='button'>
-                <a href='./derivative'>Derivatives</a>
-            </button>
-            <button className='button'>
-                <a href="./contact">Contact Us</a>
-            </button>
+            <a href='/home'>
+                <button className='button'>
+                    Home
+                </button>
+            </a>
+            <a href='/aboutus'>
+                <button className='button'>
+                    About Us
+                </button>
+            </a>
+            <a href='/methods'>
+                <button className='button'>
+                    Methods
+                </button>
+            </a>
+            <a href='/cyclone'>
+                <button className='button'>
+                    Cyclone Fund
+                </button>
+            </a>
+            <a href='./derivative'>
+                <button className='button'>
+                    Derivatives
+                </button>
+            </a>
+            <a href="./contact">
+                <button className='button'>
+                    Contact Us
+                </button>
+            </a>
         </>
     )
 }
