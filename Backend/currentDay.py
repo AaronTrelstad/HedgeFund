@@ -21,15 +21,15 @@ CurrFord[0][2] = float(CurrFord[0][2])
 CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
-Ford_Shares = 16.89174820735939
-GM_Shares = 6.180141377204273
+Ford_Shares = 34.75320639953611
+GM_Shares = 18.40977713223365
 
 """
 $200 is a full confidence buy/sell, I need to create a way to 
 price the other buy/sells
 """
 
-money = 600
+money = 0
 initial = money
 
 GM_Moves = []
@@ -37,7 +37,6 @@ Ford_Moves = []
 
 investment_small = 200
 investment_big = 200
-
 
 differ = abs(CurrFord[0][2] - CurrGM[0][2])
   ##Anytime Ford is lower it is better to buy
