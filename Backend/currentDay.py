@@ -1,6 +1,10 @@
 import csv
 from StatArb import diff_avg
 
+"""
+Calculates signal for a specific day
+"""
+
 with open('currentFord.csv') as f:
   reader = csv.reader(f)
   CurrFord = list(reader)
@@ -21,6 +25,7 @@ CurrFord[0][2] = float(CurrFord[0][2])
 CurrGM[0][1] = float(CurrGM[0][1])
 CurrGM[0][2] = float(CurrGM[0][2])
 
+###Paste in theb current number of shares
 Ford_Shares = 34.75320639953611
 GM_Shares = 18.40977713223365
 
